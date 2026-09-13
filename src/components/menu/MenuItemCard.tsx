@@ -16,14 +16,14 @@ export function MenuItemCard({ item, style }: MenuItemCardProps) {
     <article
       style={style}
       className={cn(
-        "motion-rise rounded-[1.35rem] border px-4 py-4 transition-transform duration-300 active:scale-[0.985]",
+        "menu-card relative overflow-hidden rounded-[1.35rem] border px-4 py-4",
         item.isFeatured
-          ? "border-sage/25 bg-[linear-gradient(135deg,rgba(125,154,120,0.16),rgba(255,253,248,0.9))]"
+          ? "border-sage/25 bg-[linear-gradient(135deg,rgba(125,154,120,0.18),rgba(255,253,248,0.92))]"
           : "border-line/80 bg-surface/90",
         !item.isAvailable && "opacity-45",
       )}
     >
-      <div className="flex items-start gap-3">
+      <div className="relative flex items-start gap-3">
         <div
           className={cn(
             "flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border",
@@ -32,7 +32,10 @@ export function MenuItemCard({ item, style }: MenuItemCardProps) {
               : "border-line bg-surface-elevated/80",
           )}
         >
-          <ItemMark categoryId={item.categoryId} className="h-8 w-8" />
+          <ItemMark
+            categoryId={item.categoryId}
+            className="icon-float h-8 w-8"
+          />
         </div>
         <div className="min-w-0 flex-1 pt-0.5">
           <div className="flex items-baseline gap-2">

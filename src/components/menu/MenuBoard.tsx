@@ -8,6 +8,7 @@ import {
 import { MenuItemCard } from "@/components/menu/MenuItemCard";
 import { MenuPoster } from "@/components/menu/MenuPoster";
 import { MenuSectionHeader } from "@/components/menu/MenuSectionHeader";
+import { Reveal } from "@/components/menu/Reveal";
 import { getSortedItems } from "@/data/menu";
 import { motionDelay } from "@/lib/motion";
 import type { MenuCategory, MenuItem } from "@/lib/types/menu";
@@ -57,11 +58,9 @@ export function MenuBoard({ categories, items }: MenuBoardProps) {
             <MenuSectionHeader category={section.category} />
             <div className="flex flex-col gap-3">
               {section.items.map((item, itemIndex) => (
-                <MenuItemCard
-                  key={item.id}
-                  item={item}
-                  style={motionDelay(itemIndex)}
-                />
+                <Reveal key={item.id} style={motionDelay(itemIndex)}>
+                  <MenuItemCard item={item} />
+                </Reveal>
               ))}
             </div>
           </section>
