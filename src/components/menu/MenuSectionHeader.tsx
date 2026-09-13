@@ -7,7 +7,7 @@ type MenuSectionHeaderProps = {
 
 export function MenuSectionHeader({ category }: MenuSectionHeaderProps) {
   return (
-    <div className="flex flex-col items-center pt-2 text-center">
+    <div className="motion-rise flex flex-col items-center pt-2 text-center">
       <div className="flex w-full items-center gap-3">
         <span className="h-px flex-1 bg-gradient-to-l from-sage/40 to-transparent" />
         <BotanicalMark className="h-5 w-5 opacity-70" />

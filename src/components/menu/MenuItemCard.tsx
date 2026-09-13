@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { ItemMark } from "@/components/brand/ItemMark";
 import { Badge } from "@/components/ui/Badge";
 import { cn } from "@/lib/cn";
@@ -7,13 +8,15 @@ import type { MenuItem } from "@/lib/types/menu";
 
 type MenuItemCardProps = {
   item: MenuItem;
+  style?: CSSProperties;
 };
 
-export function MenuItemCard({ item }: MenuItemCardProps) {
+export function MenuItemCard({ item, style }: MenuItemCardProps) {
   return (
     <article
+      style={style}
       className={cn(
-        "rounded-[1.35rem] border px-4 py-4 transition-transform duration-300",
+        "motion-rise rounded-[1.35rem] border px-4 py-4 transition-transform duration-300 active:scale-[0.985]",
         item.isFeatured
           ? "border-sage/25 bg-[linear-gradient(135deg,rgba(125,154,120,0.16),rgba(255,253,248,0.9))]"
           : "border-line/80 bg-surface/90",

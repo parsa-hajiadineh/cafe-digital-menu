@@ -9,7 +9,7 @@ type MenuPosterProps = {
 
 export function MenuPoster({ item }: MenuPosterProps) {
   return (
-    <article className="relative overflow-hidden rounded-[1.75rem] border border-sage/25 bg-[linear-gradient(155deg,#dce8d8_0%,#f4efe4_46%,#e8dcc6_100%)] px-5 py-6 shadow-[0_18px_40px_rgba(36,48,39,0.06)]">
+    <article className="motion-rise-soft relative overflow-hidden rounded-[1.75rem] border border-sage/25 bg-[linear-gradient(155deg,#dce8d8_0%,#f4efe4_46%,#e8dcc6_100%)] px-5 py-6 shadow-[0_18px_40px_rgba(36,48,39,0.06)]">
       <BotanicalMark className="pointer-events-none absolute -left-4 -top-3 h-28 w-28 opacity-20" />
       <BotanicalMark className="pointer-events-none absolute -bottom-6 -right-3 h-24 w-24 rotate-12 opacity-10" />
       <div className="relative">

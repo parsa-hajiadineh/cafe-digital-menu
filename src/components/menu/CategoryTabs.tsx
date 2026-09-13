@@ -27,10 +27,11 @@ export function CategoryTabs({
               type="button"
               onClick={() => onChange(tab.id)}
               className={cn(
-                "shrink-0 rounded-full px-4 py-2 text-sm transition-[background-color,color,transform] duration-300",
+                "shrink-0 rounded-full px-4 py-2 text-sm transition-[background-color,color,transform,box-shadow] duration-300",
                 "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage/60",
+                "active:scale-[0.97]",
                 isActive
-                  ? "bg-sage text-cream shadow-[0_8px_20px_rgba(125,154,120,0.22)]"
+                  ? "scale-[1.03] bg-sage text-cream shadow-[0_8px_20px_rgba(125,154,120,0.22)]"
                   : "border border-line bg-surface/80 text-ink",
               )}
             >
