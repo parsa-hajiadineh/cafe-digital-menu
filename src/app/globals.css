@@ -194,11 +194,11 @@ body {
 
 .opening-veil {
   appearance: none;
-  position: absolute;
-  inset: 0;
-  z-index: 40;
+  position: relative;
   display: flex;
+  height: 100dvh;
   width: 100%;
+  max-width: 28rem;
   border: 0;
   padding: 0;
   font: inherit;

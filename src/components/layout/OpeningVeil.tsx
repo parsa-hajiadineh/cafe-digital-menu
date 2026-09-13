@@ -24,26 +24,28 @@ export function OpeningVeil() {
   }
 
   return (
-    <button
-      type="button"
-      onClick={openMenu}
-      className={cn("opening-veil", isTurning && "is-turning")}
-      aria-label="ورود به منو"
-    >
-      <div className="flex flex-col items-center px-8 text-center">
-        <div className="opening-veil-mark mb-6 text-sage-deep">
-          <span className="opening-veil-ring border-sage-deep/40" />
-          <PowerIcon className="h-10 w-10" />
+    <div className="fixed inset-0 z-40 flex justify-center overflow-hidden">
+      <button
+        type="button"
+        onClick={openMenu}
+        className={cn("opening-veil", isTurning && "is-turning")}
+        aria-label="ورود به منو"
+      >
+        <div className="flex flex-col items-center px-6 text-center">
+          <div className="opening-veil-mark mb-4 text-sage-deep">
+            <span className="opening-veil-ring border-sage-deep/40" />
+            <PowerIcon className="h-8 w-8" />
+          </div>
+          <p className="text-3xl text-sage-deep">{siteConfig.nameFa}</p>
+          <p className="mt-1 text-[11px] tracking-[0.28em] text-sage-deep/80">
+            POWER
+          </p>
+          <BotanicalMark className="mt-4 h-6 w-6 text-sage-deep/70" />
+          <p className="mt-5 text-[11px] tracking-[0.22em] text-sage-deep/70">
+            برای ورود لمس کنید
+          </p>
         </div>
-        <p className="text-4xl text-sage-deep">{siteConfig.nameFa}</p>
-        <p className="mt-2 text-[11px] tracking-[0.28em] text-sage-deep/80">
-          POWER
-        </p>
-        <BotanicalMark className="mt-6 h-8 w-8 text-sage-deep/70" />
-        <p className="mt-8 text-[11px] tracking-[0.22em] text-sage-deep/70">
-          برای ورود لمس کنید
-        </p>
-      </div>
-    </button>
+      </button>
+    </div>
   );
 }
