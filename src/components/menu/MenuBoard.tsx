@@ -6,6 +6,8 @@ import {
   CategoryTabs,
 } from "@/components/menu/CategoryTabs";
 import { MenuItemCard } from "@/components/menu/MenuItemCard";
+import { MenuPoster } from "@/components/menu/MenuPoster";
+import { MenuSectionHeader } from "@/components/menu/MenuSectionHeader";
 import { getSortedItems } from "@/data/menu";
 import type { MenuCategory, MenuItem } from "@/lib/types/menu";
 
@@ -16,6 +18,11 @@ type MenuBoardProps = {
 
 export function MenuBoard({ categories, items }: MenuBoardProps) {
   const [activeId, setActiveId] = useState(ALL_CATEGORY_ID);
+
+  const houseSelection = useMemo(
+    () => items.find((item) => item.isFeatured && item.isAvailable),
+    [items],
+  );
 
   const sections = useMemo(() => {
     return categories
@@ -41,16 +48,12 @@ export function MenuBoard({ categories, items }: MenuBoardProps) {
         onChange={setActiveId}
       />
       <div className="flex flex-col gap-8 pt-6">
+        {activeId === ALL_CATEGORY_ID && houseSelection ? (
+          <MenuPoster item={houseSelection} />
+        ) : null}
         {sections.map((section) => (
           <section key={section.category.id} className="flex flex-col gap-3">
-            <div>
-              <h2 className="text-sm text-sage">{section.category.name}</h2>
-              {section.category.description ? (
-                <p className="mt-1 text-xs leading-6 text-muted">
-                  {section.category.description}
-                </p>
-              ) : null}
-            </div>
+            <MenuSectionHeader category={section.category} />
             <div className="flex flex-col gap-3">
               {section.items.map((item) => (
                 <MenuItemCard key={item.id} item={item} />

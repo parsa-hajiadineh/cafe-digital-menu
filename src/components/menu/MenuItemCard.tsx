@@ -1,3 +1,4 @@
+import { ItemMark } from "@/components/brand/ItemMark";
 import { Badge } from "@/components/ui/Badge";
 import { cn } from "@/lib/cn";
 import { tagLabels } from "@/lib/config/tags";
@@ -12,33 +13,45 @@ export function MenuItemCard({ item }: MenuItemCardProps) {
   return (
     <article
       className={cn(
-        "flex gap-4 rounded-[1.35rem] border px-4 py-4",
+        "rounded-[1.35rem] border px-4 py-4 transition-transform duration-300",
         item.isFeatured
-          ? "border-sage/25 bg-sage-dim"
-          : "border-line bg-surface",
-        !item.isAvailable && "opacity-50",
+          ? "border-sage/25 bg-[linear-gradient(135deg,rgba(125,154,120,0.16),rgba(255,253,248,0.9))]"
+          : "border-line/80 bg-surface/90",
+        !item.isAvailable && "opacity-45",
       )}
     >
-      <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-surface-elevated font-display text-2xl text-sage">
-        {item.name.charAt(0)}
-      </div>
-      <div className="min-w-0 flex-1">
-        <div className="flex items-start justify-between gap-3">
-          <h3 className="text-base text-ink">{item.name}</h3>
-          <p className="shrink-0 text-sm text-sage-bright">
-            {item.isAvailable ? formatPrice(item.price) : "ناموجود"}
-          </p>
+      <div className="flex items-start gap-3">
+        <div
+          className={cn(
+            "flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border",
+            item.isFeatured
+              ? "border-sage/25 bg-cream/60"
+              : "border-line bg-surface-elevated/80",
+          )}
+        >
+          <ItemMark categoryId={item.categoryId} className="h-8 w-8" />
         </div>
-        {item.description ? (
-          <p className="mt-1 text-sm leading-7 text-muted">{item.description}</p>
-        ) : null}
-        {item.tags?.length ? (
-          <div className="mt-3 flex flex-wrap gap-1.5">
-            {item.tags.map((tag) => (
-              <Badge key={tag}>{tagLabels[tag]}</Badge>
-            ))}
+        <div className="min-w-0 flex-1 pt-0.5">
+          <div className="flex items-baseline gap-2">
+            <h3 className="text-[15px] text-ink">{item.name}</h3>
+            <span className="mb-1 flex-1 border-b border-dotted border-sage/30" />
+            <p className="shrink-0 text-sm text-sage-bright">
+              {item.isAvailable ? formatPrice(item.price) : "ناموجود"}
+            </p>
           </div>
-        ) : null}
+          {item.description ? (
+            <p className="mt-1 text-[13px] leading-7 text-muted">
+              {item.description}
+            </p>
+          ) : null}
+          {item.tags?.length ? (
+            <div className="mt-2.5 flex flex-wrap gap-1.5">
+              {item.tags.map((tag) => (
+                <Badge key={tag}>{tagLabels[tag]}</Badge>
+              ))}
+            </div>
+          ) : null}
+        </div>
       </div>
     </article>
   );
