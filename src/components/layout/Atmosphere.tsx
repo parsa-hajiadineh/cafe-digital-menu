@@ -3,17 +3,6 @@ import { BotanicalMark } from "@/components/brand/BotanicalMark";
 export function Atmosphere() {
   return (
     <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-      <svg className="absolute inset-0 h-full w-full opacity-[0.06] mix-blend-multiply">
-        <filter id="menu-grain">
-          <feTurbulence
-            type="fractalNoise"
-            baseFrequency="0.8"
-            numOctaves="4"
-            stitchTiles="stitch"
-          />
-        </filter>
-        <rect width="100%" height="100%" filter="url(#menu-grain)" />
-      </svg>
       <div className="light-ray" />
       <div className="atmosphere-orb -right-16 top-8" />
       <div className="atmosphere-orb atmosphere-orb-delay -left-20 top-[26rem]" />

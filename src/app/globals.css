@@ -325,13 +325,10 @@ body {
 
 @keyframes page-turn {
   0% {
-    transform: rotateY(0deg);
-  }
-  32% {
-    transform: rotateY(-20deg);
+    transform: translateX(0) rotate(0deg);
   }
   100% {
-    transform: rotateY(-118deg);
+    transform: translateX(-110%) rotate(-8deg);
     opacity: 0;
   }
 }

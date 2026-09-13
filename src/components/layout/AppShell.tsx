@@ -10,7 +10,7 @@ type AppShellProps = {
 
 export function AppShell({ children }: AppShellProps) {
   return (
-    <div className="relative mx-auto flex min-h-dvh w-full max-w-md flex-col overflow-hidden border-line [perspective:1400px] sm:border-x">
+    <div className="relative mx-auto flex min-h-dvh w-full max-w-md flex-col overflow-hidden border-line sm:border-x">
       <Atmosphere />
       <OpeningVeil />
       <AppHeader />
