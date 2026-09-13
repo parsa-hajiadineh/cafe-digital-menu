@@ -265,11 +265,6 @@ body {
   animation-delay: var(--motion-delay, 0ms);
 }
 
-.reveal-wait {
-  opacity: 0;
-  transform: translateY(18px);
-}
-
 .sheen::after {
   content: "";
   position: absolute;

@@ -1,20 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { createPortal } from "react-dom";
+import { useState } from "react";
 import { BotanicalMark } from "@/components/brand/BotanicalMark";
 import { PowerIcon } from "@/components/brand/PowerIcon";
 import { cn } from "@/lib/cn";
 import { siteConfig } from "@/lib/config/site";
 
 export function OpeningVeil() {
-  const [isMounted, setIsMounted] = useState(false);
   const [isTurning, setIsTurning] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   const openMenu = () => {
     if (isTurning) {
@@ -25,16 +19,17 @@ export function OpeningVeil() {
     window.setTimeout(() => setIsHidden(true), 850);
   };
 
-  if (!isMounted || isHidden) {
+  if (isHidden) {
     return null;
   }
 
-  return createPortal(
+  return (
     <div
       role="button"
       tabIndex={0}
       aria-label="ورود به منو"
       onPointerUp={openMenu}
+      onClick={openMenu}
       onKeyDown={(event) => {
         if (event.key === "Enter" || event.key === " ") {
           event.preventDefault();
@@ -57,7 +52,6 @@ export function OpeningVeil() {
           برای ورود لمس کنید
         </p>
       </div>
-    </div>,
-    document.body,
+    </div>
   );
 }

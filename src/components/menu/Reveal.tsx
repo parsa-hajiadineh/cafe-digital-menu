@@ -1,8 +1,5 @@
-"use client";
-
 import type { CSSProperties, ReactNode } from "react";
 import { cn } from "@/lib/cn";
-import { useInView } from "@/lib/useInView";
 
 type RevealProps = {
   children: ReactNode;
@@ -11,14 +8,8 @@ type RevealProps = {
 };
 
 export function Reveal({ children, className, style }: RevealProps) {
-  const { ref, isVisible } = useInView<HTMLDivElement>();
-
   return (
-    <div
-      ref={ref}
-      style={style}
-      className={cn(isVisible ? "motion-rise" : "reveal-wait", className)}
-    >
+    <div style={style} className={cn("motion-rise", className)}>
       {children}
     </div>
   );
