@@ -1,16 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --canvas: #f3efe4;
-  --surface: #fffdf8;
-  --surface-elevated: #ebe6d8;
-  --ink: #243027;
-  --muted: #6d776c;
-  --sage: #7d9a78;
-  --sage-bright: #6d8b69;
-  --sage-dim: rgba(125, 154, 120, 0.14);
-  --line: rgba(36, 48, 39, 0.1);
-  --cream: #f7f3ea;
+  --canvas: #f4f6f4;
+  --surface: #fbfcfb;
+  --surface-elevated: #e4eae5;
+  --ink: #2a332e;
+  --muted: #6d7871;
+  --sage: #bac7bc;
+  --sage-bright: #8a9b8e;
+  --sage-deep: #5c6d61;
+  --sage-dim: rgba(186, 199, 188, 0.34);
+  --line: rgba(42, 51, 46, 0.1);
+  --cream: #f7f8f6;
   --danger: #b45a4c;
 }
 
@@ -22,6 +23,7 @@
   --color-muted: var(--muted);
   --color-sage: var(--sage);
   --color-sage-bright: var(--sage-bright);
+  --color-sage-deep: var(--sage-deep);
   --color-sage-dim: var(--sage-dim);
   --color-line: var(--line);
   --color-cream: var(--cream);
@@ -38,7 +40,7 @@ html {
 body {
   min-height: 100dvh;
   background:
-    radial-gradient(820px 380px at 80% -6%, rgba(125, 154, 120, 0.2), transparent 52%),
+    radial-gradient(820px 380px at 80% -6%, rgba(186, 199, 188, 0.42), transparent 52%),
     radial-gradient(640px 320px at 0% 18%, rgba(232, 220, 190, 0.45), transparent 48%),
     var(--canvas);
   color: var(--ink);
@@ -46,7 +48,7 @@ body {
 }
 
 ::selection {
-  background: rgba(125, 154, 120, 0.28);
+  background: rgba(186, 199, 188, 0.42);
   color: var(--ink);
 }
 
@@ -63,7 +65,7 @@ body {
   height: 16rem;
   width: 16rem;
   border-radius: 9999px;
-  background: radial-gradient(circle, rgba(125, 154, 120, 0.32), transparent 68%);
+  background: radial-gradient(circle, rgba(186, 199, 188, 0.45), transparent 68%);
   filter: blur(8px);
   animation: orb-pulse 6s ease-in-out infinite;
 }
@@ -191,16 +193,28 @@ body {
 }
 
 .opening-veil {
+  appearance: none;
   position: absolute;
   inset: 0;
   z-index: 40;
   display: flex;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
   align-items: center;
   justify-content: center;
+  transform-origin: left center;
   background:
-    radial-gradient(circle at 50% 42%, #93aa8c, #667864 60%, #3f4d3c);
-  animation: veil-lift 1.05s cubic-bezier(0.76, 0, 0.24, 1) forwards;
-  animation-delay: 0.42s;
+    linear-gradient(160deg, #d5ddd6 0%, #bac7bc 46%, #9aaba0 100%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+}
+
+.opening-veil.is-turning {
+  pointer-events: none;
+  animation: page-turn 0.95s cubic-bezier(0.65, 0.05, 0.36, 1) forwards;
 }
 
 .opening-veil-mark {
@@ -230,7 +244,7 @@ body {
 
 .seal-ring-outer {
   inset: 0;
-  border: 1px dashed rgba(125, 154, 120, 0.75);
+  border: 1px dashed rgba(92, 109, 97, 0.7);
   animation:
     spin-slow 8s linear infinite,
     ring-pulse 2s ease-in-out infinite;
@@ -238,13 +252,13 @@ body {
 
 .seal-ring-inner {
   inset: 0.4rem;
-  border: 1px solid rgba(125, 154, 120, 0.45);
+  border: 1px solid rgba(186, 199, 188, 0.9);
   animation: spin-slow 6s linear infinite reverse;
 }
 
 .seal-ring-header {
   inset: 0;
-  border: 1px dashed rgba(125, 154, 120, 0.55);
+  border: 1px dashed rgba(92, 109, 97, 0.55);
   animation: spin-slow 9s linear infinite;
 }
 
@@ -284,8 +298,8 @@ body {
   left: 0;
   height: calc(100% - 0.5rem);
   border-radius: 9999px;
-  background: var(--sage);
-  box-shadow: 0 8px 20px rgba(125, 154, 120, 0.22);
+  background: var(--sage-deep);
+  box-shadow: 0 8px 20px rgba(92, 109, 97, 0.2);
   pointer-events: none;
   transition:
     transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
@@ -309,9 +323,15 @@ body {
   animation: icon-float 2.4s ease-in-out infinite;
 }
 
-@keyframes veil-lift {
-  to {
-    transform: translateY(-110%);
+@keyframes page-turn {
+  0% {
+    transform: rotateY(0deg);
+  }
+  32% {
+    transform: rotateY(-20deg);
+  }
+  100% {
+    transform: rotateY(-118deg);
     opacity: 0;
   }
 }
@@ -325,10 +345,10 @@ body {
 @keyframes ring-pulse {
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(125, 154, 120, 0.08);
+    box-shadow: 0 0 0 0 rgba(186, 199, 188), 0.08);
   }
   50% {
-    box-shadow: 0 0 0 10px rgba(125, 154, 120, 0.16);
+    box-shadow: 0 0 0 10px rgba(186, 199, 188), 0.16);
   }
 }
 
@@ -368,10 +388,10 @@ body {
 @keyframes badge-glow {
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(125, 154, 120, 0.18);
+    box-shadow: 0 0 0 0 rgba(186, 199, 188), 0.18);
   }
   50% {
-    box-shadow: 0 0 0 6px rgba(125, 154, 120, 0);
+    box-shadow: 0 0 0 6px rgba(186, 199, 188), 0);
   }
 }
 

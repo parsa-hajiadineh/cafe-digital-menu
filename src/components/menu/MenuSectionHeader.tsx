@@ -11,7 +11,7 @@ export function MenuSectionHeader({ category }: MenuSectionHeaderProps) {
       <div className="flex w-full items-center gap-3">
         <span className="h-px flex-1 bg-gradient-to-l from-sage/40 to-transparent" />
         <BotanicalMark className="h-5 w-5 opacity-70" />
-        <h2 className="text-sm tracking-[0.18em] text-sage">{category.name}</h2>
+        <h2 className="text-sm tracking-[0.18em] text-sage-deep">{category.name}</h2>
         <BotanicalMark className="h-5 w-5 opacity-70 -scale-x-100" />
         <span className="h-px flex-1 bg-gradient-to-r from-sage/40 to-transparent" />
       </div>

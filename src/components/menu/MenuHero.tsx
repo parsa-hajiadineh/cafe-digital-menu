@@ -8,10 +8,10 @@ export function MenuHero() {
       <div className="motion-seal relative mb-5 flex h-[4.5rem] w-[4.5rem] items-center justify-center">
         <span className="seal-ring-outer" />
         <span className="seal-ring-inner" />
-        <span className="font-display text-3xl text-sage">{siteConfig.monogram}</span>
+        <span className="font-display text-3xl text-sage-deep">{siteConfig.monogram}</span>
       </div>
       <p
-        className="motion-rise text-[11px] tracking-[0.32em] text-sage"
+        className="motion-rise text-[11px] tracking-[0.32em] text-sage-deep"
         style={motionDelay(1, 90)}
       >
         منوی امروز
@@ -27,7 +27,7 @@ export function MenuHero() {
           </span>
         ))}
       </h1>
-      <div className="motion-line mt-4 flex items-center gap-3 text-sage">
+      <div className="motion-line mt-4 flex items-center gap-3 text-sage-deep">
         <span className="h-px w-10 bg-gradient-to-l from-sage to-transparent" />
         <BotanicalMark className="h-7 w-7 atmosphere-drift" />
         <span className="h-px w-10 bg-gradient-to-r from-sage to-transparent" />

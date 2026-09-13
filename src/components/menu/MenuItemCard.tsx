@@ -18,7 +18,7 @@ export function MenuItemCard({ item, style }: MenuItemCardProps) {
       className={cn(
         "menu-card relative overflow-hidden rounded-[1.35rem] border px-4 py-4",
         item.isFeatured
-          ? "border-sage/25 bg-[linear-gradient(135deg,rgba(125,154,120,0.18),rgba(255,253,248,0.92))]"
+          ? "border-sage/40 bg-[linear-gradient(135deg,rgba(186,199,188,0.42),rgba(251,252,251,0.94))]"
           : "border-line/80 bg-surface/90",
         !item.isAvailable && "opacity-45",
       )}
@@ -41,7 +41,7 @@ export function MenuItemCard({ item, style }: MenuItemCardProps) {
           <div className="flex items-baseline gap-2">
             <h3 className="text-[15px] text-ink">{item.name}</h3>
             <span className="mb-1 flex-1 border-b border-dotted border-sage/30" />
-            <p className="shrink-0 text-sm text-sage-bright">
+            <p className="shrink-0 text-sm text-sage-deep">
               {item.isAvailable ? formatPrice(item.price) : "ناموجود"}
             </p>
           </div>

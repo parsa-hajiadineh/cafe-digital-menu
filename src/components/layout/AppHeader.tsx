@@ -8,7 +8,7 @@ export function AppHeader() {
         <div className="flex items-center gap-3">
           <div className="relative flex h-11 w-11 items-center justify-center">
             <span className="seal-ring-header" />
-            <span className="font-display text-xl text-sage">
+            <span className="font-display text-xl text-sage-deep">
               {siteConfig.monogram}
             </span>
           </div>
@@ -19,7 +19,7 @@ export function AppHeader() {
             <p className="text-xs text-muted">{siteConfig.nameFa}</p>
           </div>
         </div>
-        <p className="text-[11px] tracking-[0.22em] text-sage">
+        <p className="text-[11px] tracking-[0.22em] text-sage-deep">
           {siteConfig.tagline}
         </p>
       </Container>
