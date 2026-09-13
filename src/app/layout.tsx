@@ -27,13 +27,13 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     title: siteConfig.nameFa,
-    statusBarStyle: "black-translucent",
+    statusBarStyle: "default",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0B0908",
-  colorScheme: "dark",
+  themeColor: "#F3EFE4",
+  colorScheme: "light",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

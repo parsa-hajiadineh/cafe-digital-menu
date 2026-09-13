@@ -9,7 +9,7 @@ export function Divider({ className }: DividerProps) {
     <div
       role="separator"
       className={cn(
-        "mx-auto h-px w-16 bg-gradient-to-l from-transparent via-gold to-transparent",
+        "mx-auto h-px w-16 bg-gradient-to-l from-transparent via-sage to-transparent",
         className,
       )}
     />

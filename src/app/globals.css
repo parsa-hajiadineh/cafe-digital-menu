@@ -1,28 +1,30 @@
 @import "tailwindcss";
 
 :root {
-  --canvas: #0b0908;
-  --surface: #16110e;
-  --surface-elevated: #211a15;
-  --cream: #f4ede3;
-  --muted: #a89888;
-  --gold: #c4a574;
-  --gold-bright: #e4c89a;
-  --gold-dim: rgba(196, 165, 116, 0.14);
-  --line: rgba(196, 165, 116, 0.22);
-  --danger: #c45c4a;
+  --canvas: #f3efe4;
+  --surface: #fffdf8;
+  --surface-elevated: #ebe6d8;
+  --ink: #243027;
+  --muted: #6d776c;
+  --sage: #7d9a78;
+  --sage-bright: #6d8b69;
+  --sage-dim: rgba(125, 154, 120, 0.14);
+  --line: rgba(36, 48, 39, 0.1);
+  --cream: #f7f3ea;
+  --danger: #b45a4c;
 }
 
 @theme inline {
   --color-canvas: var(--canvas);
   --color-surface: var(--surface);
   --color-surface-elevated: var(--surface-elevated);
-  --color-cream: var(--cream);
+  --color-ink: var(--ink);
   --color-muted: var(--muted);
-  --color-gold: var(--gold);
-  --color-gold-bright: var(--gold-bright);
-  --color-gold-dim: var(--gold-dim);
+  --color-sage: var(--sage);
+  --color-sage-bright: var(--sage-bright);
+  --color-sage-dim: var(--sage-dim);
   --color-line: var(--line);
+  --color-cream: var(--cream);
   --color-danger: var(--danger);
   --font-sans: var(--font-vazirmatn);
   --font-display: var(--font-cormorant);
@@ -30,19 +32,27 @@
 
 html {
   background: var(--canvas);
-  color: var(--cream);
+  color: var(--ink);
 }
 
 body {
   min-height: 100dvh;
   background:
-    radial-gradient(1100px 520px at 50% -12%, rgba(196, 165, 116, 0.1), transparent 55%),
+    radial-gradient(900px 420px at 50% -8%, rgba(125, 154, 120, 0.16), transparent 58%),
     var(--canvas);
-  color: var(--cream);
+  color: var(--ink);
   font-family: var(--font-vazirmatn), Tahoma, sans-serif;
 }
 
 ::selection {
-  background: rgba(196, 165, 116, 0.28);
-  color: var(--cream);
+  background: rgba(125, 154, 120, 0.28);
+  color: var(--ink);
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }

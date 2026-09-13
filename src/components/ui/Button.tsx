@@ -10,10 +10,10 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 const variantClassName: Record<ButtonVariant, string> = {
-  primary: "bg-gold text-canvas hover:bg-gold-bright",
+  primary: "bg-sage text-cream hover:bg-sage-bright",
   secondary:
-    "border border-line bg-gold-dim text-gold-bright hover:bg-surface-elevated",
-  ghost: "border border-line text-cream hover:border-gold/50 hover:text-gold-bright",
+    "border border-line bg-sage-dim text-sage-bright hover:bg-surface-elevated",
+  ghost: "border border-line text-ink hover:border-sage/50 hover:text-sage-bright",
 };
 
 const sizeClassName: Record<ButtonSize, string> = {
@@ -33,7 +33,7 @@ export function Button({
       type={type}
       className={cn(
         "inline-flex items-center justify-center rounded-full font-medium tracking-wide transition-colors duration-200",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/70 focus-visible:ring-offset-2 focus-visible:ring-offset-canvas",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage/70 focus-visible:ring-offset-2 focus-visible:ring-offset-canvas",
         "disabled:pointer-events-none disabled:opacity-40",
         variantClassName[variant],
         sizeClassName[size],
