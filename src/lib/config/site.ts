@@ -1,9 +1,8 @@
 export const siteConfig = {
-  name: "Noir",
-  nameFa: "نوآر",
-  monogram: "N",
+  name: "قهوه پاور",
+  nameFa: "قهوه پاور",
   tagline: "منوی دیجیتال",
-  description: "منوی دیجیتال لوکس کافه نوآر؛ سریع، مدرن و مناسب موبایل.",
+  description: "منوی دیجیتال کافه قهوه پاور؛ سریع، مدرن و مناسب موبایل.",
   locale: "fa-IR",
   dir: "rtl",
   lang: "fa",

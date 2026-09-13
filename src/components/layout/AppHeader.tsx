@@ -1,3 +1,4 @@
+import { PowerIcon } from "@/components/brand/PowerIcon";
 import { siteConfig } from "@/lib/config/site";
 import { Container } from "@/components/ui/Container";
 
@@ -8,20 +9,14 @@ export function AppHeader() {
         <div className="flex items-center gap-3">
           <div className="relative flex h-11 w-11 items-center justify-center">
             <span className="seal-ring-header" />
-            <span className="font-display text-xl text-sage-deep">
-              {siteConfig.monogram}
-            </span>
+            <PowerIcon className="h-5 w-5 text-sage-deep" />
           </div>
           <div className="leading-tight">
-            <p className="font-display text-lg tracking-[0.22em] text-ink">
-              {siteConfig.name}
-            </p>
-            <p className="text-xs text-muted">{siteConfig.nameFa}</p>
+            <p className="text-base text-ink">{siteConfig.nameFa}</p>
+            <p className="text-xs text-muted">{siteConfig.tagline}</p>
           </div>
         </div>
-        <p className="text-[11px] tracking-[0.22em] text-sage-deep">
-          {siteConfig.tagline}
-        </p>
+        <p className="text-[11px] tracking-[0.18em] text-sage-deep">POWER</p>
       </Container>
     </header>
   );

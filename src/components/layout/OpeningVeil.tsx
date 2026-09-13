@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { BotanicalMark } from "@/components/brand/BotanicalMark";
+import { PowerIcon } from "@/components/brand/PowerIcon";
 import { cn } from "@/lib/cn";
 import { siteConfig } from "@/lib/config/site";
 
@@ -32,14 +33,12 @@ export function OpeningVeil() {
       <div className="flex flex-col items-center px-8 text-center">
         <div className="opening-veil-mark mb-6 text-sage-deep">
           <span className="opening-veil-ring border-sage-deep/40" />
-          <span className="font-display text-4xl tracking-[0.2em]">
-            {siteConfig.monogram}
-          </span>
+          <PowerIcon className="h-10 w-10" />
         </div>
-        <p className="font-display text-5xl tracking-[0.14em] text-sage-deep" dir="ltr">
-          {siteConfig.name}
+        <p className="text-4xl text-sage-deep">{siteConfig.nameFa}</p>
+        <p className="mt-2 text-[11px] tracking-[0.28em] text-sage-deep/80">
+          POWER
         </p>
-        <p className="mt-2 text-sm text-sage-deep/80">{siteConfig.nameFa}</p>
         <BotanicalMark className="mt-6 h-8 w-8 text-sage-deep/70" />
         <p className="mt-8 text-[11px] tracking-[0.22em] text-sage-deep/70">
           برای ورود لمس کنید
