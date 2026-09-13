@@ -1,2 +1,37 @@
-# cafe-digital-menu
-A modern digital menu for cafes
+# کافه نوآر — منوی دیجیتال
+
+منوی دیجیتال لوکس، سریع و Mobile-First برای کافه. مشتری با QR Code وارد می‌شود.
+
+## تکنولوژی
+
+- **Next.js 16** (App Router) برای رندر سریع، بهینه‌سازی تصویر و مسیر توسعه بعدی
+- **TypeScript** برای قراردادهای داده و توسعه امن
+- **Tailwind CSS v4** به‌همراه توکن‌های اختصاصی Design System
+- **RTL و فارسی** از لایه ریشه (`lang="fa"` / `dir="rtl"`)
+
+## اجرا
+
+```bash
+npm install
+npm run dev
+```
+
+سپس [http://localhost:3000](http://localhost:3000) را باز کنید.
+
+## معماری
+
+```text
+src/
+  app/                 # مسیرها و لایه ریشه
+  components/layout/   # شِل، هدر و فوتر
+  components/ui/       # کامپوننت‌های پایه Design System
+  data/                # کاتالوگ محلی (تا اتصال API)
+  lib/config/          # هویت کافه و تنظیمات سایت
+  lib/types/           # قرارداد تایپی منو
+  lib/format/          # قالب‌بندی قیمت و متن
+```
+
+## وضعیت توسعه
+
+- مرحله ۱: زیرساخت، Design System و قرارداد منو — انجام شده
+- مراحل بعد: رابط منو، جزئیات آیتم، جستجو و جریان QR

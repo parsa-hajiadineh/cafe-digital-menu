@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  --canvas: #0b0908;
+  --surface: #16110e;
+  --surface-elevated: #211a15;
+  --cream: #f4ede3;
+  --muted: #a89888;
+  --gold: #c4a574;
+  --gold-bright: #e4c89a;
+  --gold-dim: rgba(196, 165, 116, 0.14);
+  --line: rgba(196, 165, 116, 0.22);
+  --danger: #c45c4a;
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-cream: var(--cream);
+  --color-muted: var(--muted);
+  --color-gold: var(--gold);
+  --color-gold-bright: var(--gold-bright);
+  --color-gold-dim: var(--gold-dim);
+  --color-line: var(--line);
+  --color-danger: var(--danger);
+  --font-sans: var(--font-vazirmatn);
+  --font-display: var(--font-cormorant);
+}
+
+html {
+  background: var(--canvas);
+  color: var(--cream);
+}
+
+body {
+  min-height: 100dvh;
+  background:
+    radial-gradient(1100px 520px at 50% -12%, rgba(196, 165, 116, 0.1), transparent 55%),
+    var(--canvas);
+  color: var(--cream);
+  font-family: var(--font-vazirmatn), Tahoma, sans-serif;
+}
+
+::selection {
+  background: rgba(196, 165, 116, 0.28);
+  color: var(--cream);
+}
